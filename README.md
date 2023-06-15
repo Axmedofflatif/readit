@@ -1,0 +1,2 @@
+# readit
+Bu blog sayt
