@@ -1,0 +1,22 @@
+<div class="row mt-5">
+    <div class="col text-center" id="ftco-section">
+        <div class="block-27">
+            <ul>
+                {% if object_list.has_previous %}
+                    <li><a href="?page={{ object_list.previous_page_number }}#ftco-section"><</a></li>
+                {% endif %}
+                <li class="active"><span>1</span></li>
+                {% for i in object_list.paginator.page_range %}
+                    {% if i == object_list.number %}
+                        <li class="active"><span>{{ i }}</span></li>
+                    {% else %}
+                        <li class=""><a href="?page={{ i }}#ftco-section">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if object_list.has_next %}
+                    <li><a href="?page={{ object_list.next_page_number }}#ftco-section">&gt;</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
